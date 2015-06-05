@@ -27,5 +27,5 @@ app.use(app.router);
 app.get('/', function(req, res) {
 //    console.log(__dirname);
 //    res.sendfile(__dirname + '/index.html');
-    return res.send("hello")
+    return res.send("DATA IS THE NEW BACON")
 });
