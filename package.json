@@ -1,0 +1,17 @@
+{
+  "name": "dataisthenewbacon",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "async": "0.9.0",
+    "aws-sdk": "2.0.15",
+    "bunyan": "^1.3.5",
+    "express": "3.17.8"
+    },
+  "author": "rev",
+  "license": "ISC"
+}
