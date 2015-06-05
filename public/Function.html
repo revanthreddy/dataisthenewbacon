@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8" />
+        <title>
+            BACON
+        </title>
+<!-- *** Scripts -->
+        <link rel="stylesheet" href="jsResources/jqwidgets/styles/jqx.base.css" type="text/css" >
+        <link rel="stylesheet" href="jsResources/jqwidgets/styles/jqx.fresh.css" type="text/css">
+        <link rel="stylesheet" href="styles/niControlStyles.css" type="text/css" >
+
+        <script src="bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="bower_components/document-register-element/build/document-register-element.max.js"></script>
+        <script src="jsResources/observe.js"></script>
+        <script src="jsResources/customevents/customevents.polyfill.js"></script>
+        <script src="jsResources/jquery.blockUI.js"></script>
+        <script src="jsResources/jqwidgets/jqxcore.js"></script>
+        <script src="jsResources/jqwidgets/jqxdata.js"></script>
+        <script src="jsResources/jqwidgets/jqxbuttons.js"></script>
+        <script src="jsResources/jqwidgets/jqxscrollbar.js"></script>
+        <script src="jsResources/jqwidgets/jqxchart.js"></script>
+        <script src="jsResources/jqwidgets/jqxnumberinput.js"></script>
+        <script src="jsResources/jqwidgets/jqxgauge.js"></script>
+        <script src="jsResources/jqwidgets/jqxslider.js"></script>
+        <script src="jsResources/jqwidgets/jqxinput.js"></script>
+        <script src="jsResources/jqwidgets/jqxcheckbox.js"></script>
+        <script src="jsResources/jqwidgets/jqxswitchbutton.js"></script>
+        <script src="jsResources/jqwidgets/jqxradiobutton.js"></script>
+        <script src="jsResources/jqwidgets/jqxtabs.js"></script>
+        <script src="jsResources/jqwidgets/jqxprogressbar.js"></script>
+        <script src="jsResources/jqwidgets/globalization/globalize.js"></script>
+        <script src="jsResources/jqwidgets/jqxtooltip.js"></script>
+        <script src="jsResources/jqwidgets/jqxcalendar.js"></script>
+        <script src="jsResources/jqwidgets/jqxdatetimeinput.js"></script>
+        <script src="jsResources/jqwidgets/jqxlistbox.js"></script>
+        <script src="jsResources/jqwidgets/jqxdropdownlist.js"></script>
+        <script src="jsResources/flot/jquery.flot.js"></script>
+        <script src="jsResources/flot/jquery.flot.axislabels.js"></script>
+        <script src="jsResources/flot/jquery.flot.symbol.js"></script>
+        <script src="jsResources/flot/jquery.flot.cursors.js"></script>
+        <script src="jsResources/flot/cbuffer.js"></script>
+        <script src="jsResources/flot/jquery.flot.historybuffer.js"></script>
+        <script src="jsResources/flot/jquery.flot.charting.js"></script>
+
+        <script src="jsResources/JsFramework/niSupport.js" type="text/javascript"></script>
+        <script src="jsResources/JsFramework/niLocalization.js" type="text/javascript"></script>
+        <script src="jsResources/JsFramework/niUIActivityService.js" type="text/javascript"></script>
+
+        <script src="jsResources/JsFramework/Elements/ni-element.js" type="text/javascript"></script>
+        <script src="jsResources/JsFramework/Elements/ni-visual-component.js" type="text/javascript"></script>
+        <script src="jsResources/JsFramework/Elements/ni-visual.js" type="text/javascript"></script>
+        <script src="jsResources/JsFramework/Elements/ni-boolean-control.js" type="text/javascript"></script>
+        <script src="jsResources/JsFramework/Elements/ni-boolean-button.js" type="text/javascript"></script>
+        <script src="jsResources/JsFramework/Elements/ni-numeric-control.js" type="text/javascript"></script>
+        <script src="jsResources/JsFramework/Elements/ni-numeric-textbox.js" type="text/javascript"></script>
+        <script src="jsResources/JsFramework/Elements/ni-numeric-pointer.js" type="text/javascript"></script>
+        <script src="jsResources/JsFramework/Elements/ni-linear-numeric-pointer.js" type="text/javascript"></script>
+        <script src="jsResources/JsFramework/Elements/ni-radial-numeric-pointer.js" type="text/javascript"></script>
+        <script src="jsResources/JsFramework/Elements/ni-slider.js" type="text/javascript"></script>
+        <script src="jsResources/JsFramework/Elements/ni-gauge.js" type="text/javascript"></script>
+        <script src="jsResources/JsFramework/Elements/ni-progress-bar.js" type="text/javascript"></script>
+        <script src="jsResources/JsFramework/Elements/ni-linear-progress-bar.js" type="text/javascript"></script>
+        <script src="jsResources/JsFramework/Elements/ni-string-control.js" type="text/javascript"></script>
+        <script src="jsResources/JsFramework/Elements/ni-time-stamp-text-box.js" type="text/javascript"></script>
+
+        <script src="jsResources/JsFramework/niVisualComponentModel.js" type="text/javascript"></script>
+        <script src="jsResources/JsFramework/niVisualModel.js" type="text/javascript"></script>
+        <script src="jsResources/JsFramework/niNumericControlModel.js" type="text/javascript"></script>
+        <script src="jsResources/JsFramework/niNumericPointerModel.js" type="text/javascript"></script>
+        <script src="jsResources/JsFramework/niRadialNumericPointerModel.js" type="text/javascript"></script>
+        <script src="jsResources/JsFramework/niGaugeModel.js" type="text/javascript"></script>
+        <script src="jsResources/JsFramework/niLinearNumericPointerModel.js" type="text/javascript"></script>
+        <script src="jsResources/JsFramework/niSliderModel.js" type="text/javascript"></script>
+        <script src="jsResources/JsFramework/niNumericTextBoxModel.js" type="text/javascript"></script>
+        <script src="jsResources/JsFramework/niGraphBaseModel.js" type="text/javascript"></script>
+        <script src="jsResources/JsFramework/niCartesianAxisModel.js" type="text/javascript"></script>
+        <script src="jsResources/JsFramework/niPlotRendererModel.js" type="text/javascript"></script>
+        <script src="jsResources/JsFramework/niCartesianPlotModel.js" type="text/javascript"></script>
+        <script src="jsResources/JsFramework/niCartesianGraphModel.js" type="text/javascript"></script>
+        <script src="jsResources/JsFramework/niChartModel.js" type="text/javascript"></script>
+        <script src="jsResources/JsFramework/niBooleanControlModel.js" type="text/javascript"></script>
+        <script src="jsResources/JsFramework/niBooleanContentControlModel.js" type="text/javascript"></script>
+        <script src="jsResources/JsFramework/niBooleanButtonModel.js" type="text/javascript"></script>
+        <script src="jsResources/JsFramework/niBooleanLEDModel.js" type="text/javascript"></script>
+        <script src="jsResources/JsFramework/niTextModel.js" type="text/javascript"></script>
+        <script src="jsResources/JsFramework/niLabelModel.js" type="text/javascript"></script>
+        <script src="jsResources/JsFramework/niHyperlinkModel.js" type="text/javascript"></script>
+        <script src="jsResources/JsFramework/niStringControlModel.js" type="text/javascript"></script>
+        <script src="jsResources/JsFramework/niImageModel.js" type="text/javascript"></script>
+        <script src="jsResources/JsFramework/niCursorModel.js" type="text/javascript"></script>
+        <script src="jsResources/JsFramework/niTabControlModel.js" type="text/javascript"></script>
+        <script src="jsResources/JsFramework/niTabItemModel.js" type="text/javascript"></script>
+        <script src="jsResources/JsFramework/niCheckBoxModel.js" type="text/javascript"></script>
+        <script src="jsResources/JsFramework/niRadioButtonModel.js" type="text/javascript"></script>
+        <script src="jsResources/JsFramework/niBooleanSwitchModel.js" type="text/javascript"></script>
+        <script src="jsResources/JsFramework/niProgressBarModel.js" type="text/javascript"></script>
+        <script src="jsResources/JsFramework/niLinearProgressBarModel.js" type="text/javascript"></script>
+        <script src="jsResources/JsFramework/niClusterModel.js" type="text/javascript"></script>
+        <script src="jsResources/JsFramework/niGuidelineModel.js" type="text/javascript"></script>
+        <script src="jsResources/JsFramework/niDropDownModel.js" type="text/javascript"></script>
+        <script src="jsResources/JsFramework/niTimeStampTextBoxModel.js" type="text/javascript"></script>
+
+        <script src="jsResources/JsFramework/niVIModel.js" type="text/javascript"></script>
+        <script src="jsResources/JsFramework/niVIModelService.js" type="text/javascript"></script>
+
+        <script src="jsResources/JsFramework/niVisualComponentViewModel.js" type="text/javascript"></script>
+        <script src="jsResources/JsFramework/niVisualViewModel.js" type="text/javascript"></script>
+        <script src="jsResources/JsFramework/niNumericControlViewModel.js" type="text/javascript"></script>
+        <script src="jsResources/JsFramework/niNumericPointerViewModel.js" type="text/javascript"></script>
+        <script src="jsResources/JsFramework/niLinearNumericPointerViewModel.js" type="text/javascript"></script>
+        <script src="jsResources/JsFramework/niRadialNumericPointerViewModel.js" type="text/javascript"></script>
+        <script src="jsResources/JsFramework/niGaugeViewModel.js" type="text/javascript"></script>
+        <script src="jsResources/JsFramework/niSliderViewModel.js" type="text/javascript"></script>
+        <script src="jsResources/JsFramework/niNumericTextBoxViewModel.js" type="text/javascript"></script>
+        <script src="jsResources/JsFramework/niCartesianAxisViewModel.js" type="text/javascript"></script>
+        <script src="jsResources/JsFramework/niPlotRendererViewModel.js" type="text/javascript"></script>
+        <script src="jsResources/JsFramework/niCartesianPlotViewModel.js" type="text/javascript"></script>
+        <script src="jsResources/JsFramework/niCartesianGraphViewModel.js" type="text/javascript"></script>
+        <script src="jsResources/JsFramework/niChartViewModel.js" type="text/javascript"></script>
+        <script src="jsResources/JsFramework/niBooleanControlViewModel.js" type="text/javascript"></script>
+        <script src="jsResources/JsFramework/niBooleanButtonViewModel.js" type="text/javascript"></script>
+        <script src="jsResources/JsFramework/niBooleanLEDViewModel.js" type="text/javascript"></script>
+        <script src="jsResources/JsFramework/niTextViewModel.js" type="text/javascript"></script>
+        <script src="jsResources/JsFramework/niLabelViewModel.js" type="text/javascript"></script>
+        <script src="jsResources/JsFramework/niHyperlinkViewModel.js" type="text/javascript"></script>
+        <script src="jsResources/JsFramework/niStringControlViewModel.js" type="text/javascript"></script>
+        <script src="jsResources/JsFramework/niImageViewModel.js" type="text/javascript"></script>
+        <script src="jsResources/JsFramework/niCursorViewModel.js" type="text/javascript"></script>
+        <script src="jsResources/JsFramework/niTabControlViewModel.js" type="text/javascript"></script>
+        <script src="jsResources/JsFramework/niTabItemViewModel.js" type="text/javascript"></script>
+        <script src="jsResources/JsFramework/niCheckBoxViewModel.js" type="text/javascript"></script>
+        <script src="jsResources/JsFramework/niRadioButtonViewModel.js" type="text/javascript"></script>
+        <script src="jsResources/JsFramework/niBooleanSwitchViewModel.js" type="text/javascript"></script>
+        <script src="jsResources/JsFramework/niProgressBarViewModel.js" type="text/javascript"></script>
+        <script src="jsResources/JsFramework/niLinearProgressBarViewModel.js" type="text/javascript"></script>
+        <script src="jsResources/JsFramework/niClusterViewModel.js" type="text/javascript"></script>
+        <script src="jsResources/JsFramework/niDropDownViewModel.js" type="text/javascript"></script>
+        <script src="jsResources/JsFramework/niTimeStampTextBoxViewModel.js" type="text/javascript"></script>
+
+        <script src="jsResources/JsFramework/niUpdateBase.js" type="text/javascript"></script>
+        <script src="jsResources/JsFramework/niLocalUpdateService.js" type="text/javascript"></script>
+
+        <script src="jsResources/JsFramework/Elements/ni-element-registration.js" type="text/javascript"></script>
+
+        <script src="viascripts/vireo.js" type="text/javascript"></script>
+        <script src="VIAInfo.js" type="text/javascript"></script>
+        <script src="viascripts/viaMain.js" type="text/javascript"></script>
+
+
+<!-- *** End -->
+
+    </head>
+
+    <body>
+        <section id="FrontPanelCanvas"> 
+<!-- *** Div Code -->
+<ni-cartesian-graph style='position: absolute; left: 189px; top: 179px; width: 636px; height: 331px' id='Function17' visible binding-info='{"value":"15"}' label-id='Function22'   >
+	<ni-cartesian-axis style='position: absolute; left: 0px; top: 0px; width: 0px; height: 0px' id='Function18' axis-label='Time' show show-label axisposition='bottom' min='0' max='100' auto-scale ></ni-cartesian-axis>
+	<ni-cartesian-axis style='position: absolute; left: 0px; top: 0px; width: 0px; height: 0px' id='Function19' axis-label='Amplitude' show show-label axisposition='left' min='0' max='10' auto-scale ></ni-cartesian-axis>
+	<ni-cartesian-axis style='position: absolute; left: 0px; top: 0px; width: 0px; height: 0px' id='Function29' axis-label='Amplitude1' show show-label axisposition='left' min='0' max='10' auto-scale ></ni-cartesian-axis>
+	<ni-cartesian-axis style='position: absolute; left: 0px; top: 0px; width: 0px; height: 0px' id='Function30' axis-label='Amplitude2' show show-label axisposition='left' min='0' max='10' auto-scale ></ni-cartesian-axis>
+	<ni-cartesian-axis style='position: absolute; left: 0px; top: 0px; width: 0px; height: 0px' id='Function219' axis-label='Time1' show show-label axisposition='bottom' min='0' max='10' auto-scale ></ni-cartesian-axis>
+	<ni-cartesian-axis style='position: absolute; left: 0px; top: 0px; width: 0px; height: 0px' id='Function220' axis-label='Time2' show show-label axisposition='bottom' min='0' max='10' auto-scale ></ni-cartesian-axis>
+	<ni-cartesian-plot style='position: absolute; left: 0px; top: 0px; width: 0px; height: 0px'  xaxis='18' yaxis='19'>
+		<ni-plot-renderer style='position: absolute; left: 0px; top: 0px; width: 0px; height: 0px' id='Function21' line-width='1' line-stroke='#FF0000' point-color='' point-size='0' point-shape=''></ni-plot-renderer>
+	</ni-cartesian-plot>
+</ni-cartesian-graph>
+<ni-label style='position: absolute; left: 189px; top: 156px; width: 33px; height: 16px' id='Function22' visible binding-info='{}' label-id='Function17' text='Graph' foreground='#4D5359' font-size='12px' font-family='"0", sans-serif'></ni-label>
+<ni-boolean-switch style='position: absolute; left: 115px; top: 580px; width: 50px; height: 50px' id='Function205' visible binding-info='{"value":"203"}' label-id='Function206'  content-visible click-mode='Release'  true-content='on' false-content='off' shape='Power' orientation='Horizontal'></ni-boolean-switch>
+<ni-label style='position: absolute; left: 115px; top: 557px; width: 38px; height: 16px' id='Function206' visible binding-info='{}' label-id='Function205' text='On/Off' foreground='#4D5359' font-size='12px' font-family='"0", sans-serif'></ni-label>
+<ni-time-stamp-text-box style='position: absolute; left: 338px; top: 102px; width: 339px; height: 22px' id='Function626' visible binding-info='{"value":"624"}' label-id='Function627' value='3516370248' configuration='{"min":"1900-01-01T06:00:00.000+00:00","max":"9900-12-31T17:59:59.999+00:00","formatString":"F","readOnly":false,"showCalendarButton":true}'></ni-time-stamp-text-box>
+<ni-label style='position: absolute; left: 338px; top: 79px; width: 25px; height: 16px' id='Function627' visible binding-info='{}' label-id='Function626' text='Start' foreground='#4D5359' font-size='12px' font-family='"0", sans-serif'></ni-label>
+<ni-time-stamp-text-box style='position: absolute; left: 744px; top: 102px; width: 283px; height: 22px' id='Function636' visible binding-info='{"value":"634"}' label-id='Function637' value='3516388231' configuration='{"min":"1900-01-01T06:00:00.000+00:00","max":"9900-12-31T11:59:59.999-06:00","formatString":"F","readOnly":false,"showCalendarButton":true}'></ni-time-stamp-text-box>
+<ni-label style='position: absolute; left: 744px; top: 79px; width: 20px; height: 16px' id='Function637' visible binding-info='{}' label-id='Function636' text='End' foreground='#4D5359' font-size='12px' font-family='"0", sans-serif'></ni-label>
+<ni-numeric-text-box style='position: absolute; left: 922px; top: 202px; width: 133px; height: 38px' id='Function715' visible binding-info='{"value":"713"}' label-id='Function716' value='0' minimum='-Infinity' maximum='Infinity' interval='1' decimal-digits='2' precision-digits='2'  configuration='{"inputMode":"simple","spinButtons":true}'></ni-numeric-text-box>
+<ni-label style='position: absolute; left: 922px; top: 179px; width: 23px; height: 16px' id='Function716' visible binding-info='{}' label-id='Function715' text='Max' foreground='#4D5359' font-size='12px' font-family='"0", sans-serif'></ni-label>
+<ni-numeric-text-box style='position: absolute; left: 922px; top: 278px; width: 134px; height: 50px' id='Function720' visible binding-info='{"value":"718"}' label-id='Function721' value='0' minimum='-Infinity' maximum='Infinity' interval='1' decimal-digits='2' precision-digits='2'  configuration='{"inputMode":"simple","spinButtons":true}'></ni-numeric-text-box>
+<ni-label style='position: absolute; left: 922px; top: 255px; width: 24px; height: 16px' id='Function721' visible binding-info='{}' label-id='Function720' text='Min ' foreground='#4D5359' font-size='12px' font-family='"0", sans-serif'></ni-label>
+<ni-numeric-text-box style='position: absolute; left: 926px; top: 366px; width: 133px; height: 42px' id='Function725' visible binding-info='{"value":"723"}' label-id='Function726' value='0' minimum='-Infinity' maximum='Infinity' interval='1' decimal-digits='2' precision-digits='2'  configuration='{"inputMode":"simple","spinButtons":true}'></ni-numeric-text-box>
+<ni-label style='position: absolute; left: 926px; top: 343px; width: 47px; height: 16px' id='Function726' visible binding-info='{}' label-id='Function725' text='Average ' foreground='#4D5359' font-size='12px' font-family='"0", sans-serif'></ni-label>
+<ni-string-control style='position: absolute; left: 1152px; top: 210px; width: 90px; height: 22px' id='Function745' visible binding-info='{"text":"743"}' label-id='Function746' text='' ></ni-string-control>
+<ni-label style='position: absolute; left: 1152px; top: 187px; width: 44px; height: 16px' id='Function746' visible binding-info='{}' label-id='Function745' text='Channel' foreground='#4D5359' font-size='12px' font-family='"0", sans-serif'></ni-label>
+
+
+<!-- *** End -->
+    </section>
+
+        <script type="text/javascript">
+            (function () {
+                'use strict'
+                var viName = 'Function.gvi';
+
+                var viModel = NationalInstruments.HtmlVI.viModelsService.getVI(viName);
+
+                if(viModel === null) {
+                    viModel = NationalInstruments.HtmlVI.viModelsService.addVI(viName);
+                }
+                
+// *** Guideline Code
+// *** End
+
+// *** Init Code
+               viModel.addFrontPanelControl({"id":"Function17","visible":true,"bindingInfo":{"value":"15"},"labelId":"Function22","left":189,"top":179,"width":636,"height":331,"kind":"niCartesianGraph","axes":[{"id":"Function18","axisLabel":"Time","show":true,"showLabel":true,"axisposition":"bottom","min":0,"max":100,"autoScale":true,"logScale":false,"kind":"niCartesianAxis"},{"id":"Function19","axisLabel":"Amplitude","show":true,"showLabel":true,"axisposition":"left","min":0,"max":10,"autoScale":true,"logScale":false,"kind":"niCartesianAxis"},{"id":"Function29","axisLabel":"Amplitude1","show":true,"showLabel":true,"axisposition":"left","min":0,"max":10,"autoScale":true,"logScale":false,"kind":"niCartesianAxis"},{"id":"Function30","axisLabel":"Amplitude2","show":true,"showLabel":true,"axisposition":"left","min":0,"max":10,"autoScale":true,"logScale":false,"kind":"niCartesianAxis"},{"id":"Function219","axisLabel":"Time1","show":true,"showLabel":true,"axisposition":"bottom","min":0,"max":10,"autoScale":true,"logScale":false,"kind":"niCartesianAxis"},{"id":"Function220","axisLabel":"Time2","show":true,"showLabel":true,"axisposition":"bottom","min":0,"max":10,"autoScale":true,"logScale":false,"kind":"niCartesianAxis"}],"plots":[{"id":null,"renderer":{"id":"Function21","lineWidth":1,"lineStroke":"#FF0000","pointColor":"","pointSize":0,"pointShape":"","kind":"niPlotRenderer"},"xaxis":"18","yaxis":"19","kind":"niCartesianPlot"}],"cursors":[]}               );
+               viModel.addFrontPanelControl({"id":"Function22","visible":true,"bindingInfo":{},"labelId":"Function17","left":189,"top":156,"width":"33","height":"16","kind":"niLabel","text":"Graph","foreground":"#4D5359","fontSize":"12px","fontFamily":"\"0\", sans-serif"}               );
+               viModel.addFrontPanelControl({"id":"Function205","visible":true,"bindingInfo":{"value":"203"},"labelId":"Function206","left":115,"top":580,"width":50,"height":50,"value":false,"contentVisible":true,"clickMode":"Release","momentary":false,"trueContent":"on","falseContent":"off","kind":"niBooleanSwitch","shape":"Power","orientation":"Horizontal"}               );
+               viModel.addFrontPanelControl({"id":"Function206","visible":true,"bindingInfo":{},"labelId":"Function205","left":115,"top":557,"width":"38","height":"16","kind":"niLabel","text":"On\/Off","foreground":"#4D5359","fontSize":"12px","fontFamily":"\"0\", sans-serif"}               );
+               viModel.addFrontPanelControl({"id":"Function626","visible":true,"bindingInfo":{"value":"624"},"labelId":"Function627","left":338,"top":102,"width":339,"height":22,"value":3516370248,"kind":"niTimeStampTextBox","configuration":{"min":"1900-01-01T06:00:00.000+00:00","max":"9900-12-31T17:59:59.999+00:00","formatString":"F","readOnly":false,"showCalendarButton":true}}               );
+               viModel.addFrontPanelControl({"id":"Function627","visible":true,"bindingInfo":{},"labelId":"Function626","left":338,"top":79,"width":"25","height":"16","kind":"niLabel","text":"Start","foreground":"#4D5359","fontSize":"12px","fontFamily":"\"0\", sans-serif"}               );
+               viModel.addFrontPanelControl({"id":"Function636","visible":true,"bindingInfo":{"value":"634"},"labelId":"Function637","left":744,"top":102,"width":283,"height":22,"value":3516388231,"kind":"niTimeStampTextBox","configuration":{"min":"1900-01-01T06:00:00.000+00:00","max":"9900-12-31T11:59:59.999-06:00","formatString":"F","readOnly":false,"showCalendarButton":true}}               );
+               viModel.addFrontPanelControl({"id":"Function637","visible":true,"bindingInfo":{},"labelId":"Function636","left":744,"top":79,"width":"20","height":"16","kind":"niLabel","text":"End","foreground":"#4D5359","fontSize":"12px","fontFamily":"\"0\", sans-serif"}               );
+               viModel.addFrontPanelControl({"id":"Function715","visible":true,"bindingInfo":{"value":"713"},"labelId":"Function716","left":922,"top":202,"width":133,"height":38,"value":0,"minimum":-Infinity,"maximum":Infinity,"interval":1,"decimalDigits":2,"precisionDigits":2,"kind":"niNumericTextBox","readOnly":false,"configuration":{"inputMode":"simple","spinButtons":true}}               );
+               viModel.addFrontPanelControl({"id":"Function716","visible":true,"bindingInfo":{},"labelId":"Function715","left":922,"top":179,"width":"23","height":"16","kind":"niLabel","text":"Max","foreground":"#4D5359","fontSize":"12px","fontFamily":"\"0\", sans-serif"}               );
+               viModel.addFrontPanelControl({"id":"Function720","visible":true,"bindingInfo":{"value":"718"},"labelId":"Function721","left":922,"top":278,"width":134,"height":50,"value":0,"minimum":-Infinity,"maximum":Infinity,"interval":1,"decimalDigits":2,"precisionDigits":2,"kind":"niNumericTextBox","readOnly":false,"configuration":{"inputMode":"simple","spinButtons":true}}               );
+               viModel.addFrontPanelControl({"id":"Function721","visible":true,"bindingInfo":{},"labelId":"Function720","left":922,"top":255,"width":"24","height":"16","kind":"niLabel","text":"Min ","foreground":"#4D5359","fontSize":"12px","fontFamily":"\"0\", sans-serif"}               );
+               viModel.addFrontPanelControl({"id":"Function725","visible":true,"bindingInfo":{"value":"723"},"labelId":"Function726","left":926,"top":366,"width":133,"height":42,"value":0,"minimum":-Infinity,"maximum":Infinity,"interval":1,"decimalDigits":2,"precisionDigits":2,"kind":"niNumericTextBox","readOnly":false,"configuration":{"inputMode":"simple","spinButtons":true}}               );
+               viModel.addFrontPanelControl({"id":"Function726","visible":true,"bindingInfo":{},"labelId":"Function725","left":926,"top":343,"width":"47","height":"16","kind":"niLabel","text":"Average ","foreground":"#4D5359","fontSize":"12px","fontFamily":"\"0\", sans-serif"}               );
+               viModel.addFrontPanelControl({"id":"Function745","visible":true,"bindingInfo":{"text":"743"},"labelId":"Function746","left":1152,"top":210,"width":90,"height":22,"kind":"niStringControl","text":"","readOnly":false}               );
+               viModel.addFrontPanelControl({"id":"Function746","visible":true,"bindingInfo":{},"labelId":"Function745","left":1152,"top":187,"width":"44","height":"16","kind":"niLabel","text":"Channel","foreground":"#4D5359","fontSize":"12px","fontFamily":"\"0\", sans-serif"}               );
+
+
+// *** End
+
+                NationalInstruments.HtmlVI.niVireoRuntime.main();
+                //NationalInstruments.HtmlVI.updateService.start('127.0.0.1', 1337);
+            })();
+        </script>
+    </body>
+</html>

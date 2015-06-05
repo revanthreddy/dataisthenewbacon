@@ -1,0 +1,94 @@
+﻿.jqx-complex-input-spin-buttons-container
+{
+    border-width: 1px;
+    border-style: solid;
+    position: relative;
+    -webkit-box-sizing: border-box !important;
+    -moz-box-sizing: border-box !important;
+    box-sizing: border-box !important;
+    padding: 2px 8px !important;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+.jqx-formatted-input, .jqx-complex-input
+{
+    padding-right: 2px !important;
+    text-align: right;
+}
+.jqx-formatted-input-lower-case, .jqx-complex-input
+{
+    text-transform: lowercase;
+}
+.jqx-formatted-input-upper-case
+{
+    text-transform: uppercase;
+}
+.jqx-formatted-input-item
+{
+    word-wrap: break-word;
+}
+.jqx-formatted-input-item-rtl, .jqx-complex-input-rtl
+{
+    direction: rtl !important;
+}
+.jqx-formatted-input-spin-buttons-container, .jqx-formatted-input-addon
+{
+    height: 100%;
+}
+.jqx-formatted-input-spin-buttons-container
+{
+    width: 18px;
+    padding: 0 0 0 1px !important;
+    overflow: hidden;
+}
+.jqx-formatted-input-spin-buttons-container-rtl
+{
+    border-right-width: 0px;
+    padding: 0 0 0 2px !important;
+}
+.jqx-formatted-input-spin-buttons-container-rtl-border
+{
+    border-left-width: 1px !important;
+}
+.jqx-formatted-input-spin-button
+{
+    position: relative;
+    width: 17px;
+    height: 50%;
+    margin-left: -1px;
+    border-width: 0px;
+    padding: 0px;
+    overflow: hidden;
+}
+.jqx-formatted-input-addon
+{
+    width: 19px;
+    padding: 0 !important;
+}
+.jqx-formatted-input-addon-rtl
+{
+    border-right-width: 1px !important;
+}
+.jqx-complex-input-parent
+{
+    overflow: hidden;
+}
+.jqx-complex-input-child
+{
+    height: 100%;
+    float: left;
+    box-sizing: border-box;
+}
+.jqx-complex-input-child-rtl
+{
+    float: right;
+}
+.jqx-complex-input-spin-buttons-container-ltr
+{
+    border-left-width: 0;
+}
+.jqx-complex-input-spin-buttons-container-rtl
+{
+    border-left-width: 1px !important;
+    border-right-width: 0;
+}

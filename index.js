@@ -21,14 +21,17 @@ app.use(express.bodyParser());
 // Not sure. Research
 app.use(express.methodOverride());
 
+// When displaying index.html, join path.  Basically, look for index.html under public_html/public.
+app.use(express.static(path.join(__dirname + '/public')));
+
 // Establishes that this app will use a router (Express functionality).
 app.use(app.router);
 
 
 app.get('/', function (req, res) {
-//    console.log(__dirname);
-//    res.sendfile(__dirname + '/index.html');
-    return res.send("DATA IS THE NEW BACON");
+    console.log(__dirname);
+    res.sendfile(__dirname + '/public/Function.html');
+    //return res.send("DATA IS THE NEW BACON");
 });
 
 

@@ -1,0 +1,141 @@
+/**************************************
+ * NI Control Styles 
+ * National Instruments Copyright 2015
+ **************************************/
+
+ /*************************************
+ * Boolean Button Custom Element
+ **************************************/
+ ni-boolean-button {
+    display:block;
+}
+ 
+/**************************************
+ * Power Switch Control
+ *
+ *    <div class="ni_power_switch">
+ *        <input type="checkbox">
+ *        <label></label>
+ *        <i></i>
+ *    </div>
+ *
+ **************************************/
+
+.ni_power_switch input { /* Hide checkbox and put it on top */
+    position: absolute;
+    cursor: pointer;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+
+.ni_power_switch label { /* Button*/
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #eaeaea;
+    border-radius: 50%;
+    box-shadow: 0 3px 5px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.3), inset 0 5px 5px rgba(255,255,255,0.3), inset 0 -5px 5px rgba(100,100,100,0.1);
+    display: block;
+}
+
+.ni_power_switch label:after { /* Outer rim */
+    position: absolute;
+    top: -8%;
+    right: -8%;
+    bottom: -8%;
+    left: -8%;
+    content: "";
+    z-index: -1;
+    border-radius: inherit;
+    background: #ddd;
+    background: linear-gradient(#ccc, #fff);
+    box-shadow: 0 2px 5px rgba(200,200,200,0.1), inset 0 2px 1px rgba(0,0,0,0.15);
+}
+
+.ni_power_switch label:before { /* LED */
+    position: absolute;
+    top: 16%;
+    right: 16%;
+    bottom: 16%;
+    left: 16%;
+    content: "";
+    border-radius: inherit;
+    border: medium solid #969696;
+}
+
+.ni_power_switch i { /* LED Handle */
+    position: absolute;
+    top: 10%;
+    bottom: 45%;
+    left: 50%;
+    content: "";
+    border: thin solid #969696;
+}
+
+.ni_power_switch input:checked ~ label { /* Button */
+    background: #e5e5e5;
+    background: linear-gradient(#dedede, #fdfdfd);
+}
+
+.ni_power_switch input:checked ~ i { /* LED Handle */
+    border: thin solid #25d025;
+}
+
+.ni_power_switch input:checked ~ label:before { /* LED */
+    border: medium solid #25d025;
+}
+
+/**************************************
+ * Round Switch Control
+ *
+ *    <div class='ni_round_switch'>
+ *        <div>
+ *            <label class="ni_round_switch_off_label"></label>
+ *            <label class="ni_round_switch_on_label"></label>
+ *        <div>
+ *        <input type='checkbox'>
+ *        <label class='ni_round_switch_knob'></label>
+ *    </div>
+ *
+ **************************************/
+
+.ni_round_switch input { /* Hide checkbox and put it on top */
+    position: absolute;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+
+.ni_round_switch_on_label {
+    position: absolute;
+    left: 50%;
+    width: 50%;
+    text-align: right;
+}
+
+.ni_round_switch_off_label {
+    position: absolute;
+    left: 0%;
+    width: 50%;
+    text-align: left;
+}
+
+.ni_round_switch_knob {
+    position: absolute;
+    top: 15%;
+    left: 13.5%;
+    width: 70%;
+    height: 70%;
+    background: #ccc;
+    border: 3px solid rgba(245, 222, 179, 0.5);
+    border-radius: 5% 50% 50% 50%;
+    box-shadow: inset 0px 0px 30px 30px rgba(255, 255, 255, 0.2), 0px 0px 3px 3px rgba(0, 0, 0, 0.1);
+}
+
+.ni_round_switch input:checked ~ .ni_round_switch_knob {
+    background: #11aa33;
+    border-radius: 50% 5% 50% 50%;
+}
