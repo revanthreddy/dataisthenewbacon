@@ -10,8 +10,9 @@
     "async": "0.9.0",
     "aws-sdk": "2.0.15",
     "bunyan": "^1.3.5",
+    "cors": "^2.7.1",
     "express": "3.17.8"
-    },
+  },
   "author": "rev",
   "license": "ISC"
 }
