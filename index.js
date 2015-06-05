@@ -63,21 +63,18 @@ app.get('/data', function (req, res) {
 
 app.get('/sample', function (req, res) {
     var db = new AWS.DynamoDB();
-    var data = [];
+    var streamdata = [];
     db.scan({
         TableName : "tb_channel_data",
         Limit : 50
     }, function(err, data) {
         if (err) { console.log(err); return; }
-        
-        var items = data.Items;
-        for (var i in items) {
-            data.push();
-            console.log(items[i].name.S);
-            console.log(items[i].value.N);
-            console.log(items[i].timestamp.N);
-        }
-        return res.send(data);
+        console.log(data);
+//        var items = data.Items;
+//        for (var i in items) {
+//            streamdata.push([items[i].value.N ,items[i].timestamp.N ]);
+//        }
+        return res.send(streamdata);
     });
     
 });
