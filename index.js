@@ -39,7 +39,7 @@ app.get('/data', function(req, res) {
     
     for(var i = 0 ; i < 10 ; i++){
         
-            data.push([Math.random() , (new Date()).getTime()]);
+            data.push(Math.random());
             
     }
     return res.send(data);
