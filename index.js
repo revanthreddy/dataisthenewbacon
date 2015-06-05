@@ -47,20 +47,6 @@ app.get('/data', function (req, res) {
 });
 
 
-app.get('/data', function (req, res) {
-//    console.log(__dirname);
-//    res.sendfile(__dirname + '/index.html');
-
-    var data = [];
-
-    for (var i = 0; i < 10; i++) {
-
-        data.push(Math.random());
-
-    }
-    return res.send(data);
-});
-
 app.get('/sample', function (req, res) {
     var db = new AWS.DynamoDB();
     var streamdata = [];
@@ -115,9 +101,11 @@ app.get('/stream', function (req, res) {
     var streamdata = [];
     var start = req.query.start;
     var end   = req.query.end;
+    var channel = req.query.channel;
     if(!start || !end)
         return res.status(400).send("need to have 'start' and 'end parameters.");
-    var channel = "stream";
+    if(!channel)
+        channel = "stream";
     console.log(end);
     console.log(start);
     db.scan({
