@@ -64,19 +64,125 @@ app.get('/data', function (req, res) {
 app.get('/sample', function (req, res) {
     var db = new AWS.DynamoDB();
     var streamdata = [];
+    var start = req.query.start;
+    var end   = req.query.end;
+    
     db.scan({
-        TableName : "tb_channel_data",
-        Limit : 50
-    }, function(err, data) {
-        if (err) { console.log(err); return; }
+        TableName: "tb_channel_data",
+        Limit: 50,
+        "ScanFilter": {
+            "name": {
+                "AttributeValueList": [
+                    {
+                        "S": "stream"
+                    }
+                ],
+                "ComparisonOperator": "EQ"
+            },
+            "timestamp": {
+                "AttributeValueList": [
+                    {
+                        "N": ""+1433520591010
+                    }
+                ],
+                "ComparisonOperator": "LT"
+            }
+        }
+    }, function (err, data) {
+        if (err) {
+            console.log(err);
+            return;
+        }
         console.log(data);
-//        var items = data.Items;
-//        for (var i in items) {
-//            streamdata.push([items[i].value.N ,items[i].timestamp.N ]);
-//        }
+        var items = data.Items;
+        for (var i in items) {
+            streamdata.push([items[i].value.N, items[i].timestamp.N]);
+        }
         return res.send(streamdata);
     });
-    
+
 });
+
+
+
+
+/*
+ * sample time stamps
+ * 1433520591011
+ */
+app.get('/stream', function (req, res) {
+    var db = new AWS.DynamoDB();
+    var streamdata = [];
+    var start = req.query.start;
+    var end   = req.query.end;
+    if(!start || !end)
+        return res.status(400).send("need to have 'start' and 'end parameters.");
+    var channel = "stream";
+    console.log(end);
+    console.log(start);
+    db.scan({
+        TableName: "tb_channel_data",
+        Limit: 50,
+        "ScanFilter": {
+            "name": {
+                "AttributeValueList": [
+                    {
+                        "S": channel
+                    }
+                ],
+                "ComparisonOperator": "EQ"
+            },
+            "timestamp": {
+                "AttributeValueList": [
+                    {
+                        "N": ""+start
+                    }
+                ],
+                "ComparisonOperator": "GT"
+            },
+            "timestamp": {
+                "AttributeValueList": [
+                    {
+                        "N": ""+end
+                    }
+                ],
+                "ComparisonOperator": "LT"
+            }
+        }
+    }, function (err, data) {
+        if (err) {
+            console.log(err);
+            return;
+        }
+        console.log(data);
+        var items = data.Items;
+        for (var i in items) {
+            streamdata.push([items[i].value.N, items[i].timestamp.N]);
+        }
+        return res.send(streamdata);
+    });
+
+});
+
+
+
+
+
+//app.get('/put', function (req, res) {
+//    var db = new AWS.DynamoDB();
+//
+//    db.putItem({
+//        "TableName": "tb_channel_data",
+//        "Item": {
+//            "name": {"S": "kinesis-stream"},
+//            "timestamp": {"N": "12345"},
+//            "value": {"N": "1234"}
+//        }
+//
+//    }, function (err, data) {
+//        console.log('error');
+//        console.log(data);
+//    });
+//});
 
 
