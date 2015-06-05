@@ -106,11 +106,12 @@ app.get('/stream', function (req, res) {
         return res.status(400).send("need to have 'start' and 'end parameters.");
     if(!channel)
         channel = "stream";
+    console.log(channel);
     console.log(end);
     console.log(start);
     db.scan({
         TableName: "tb_channel_data",
-        Limit: 50,
+        
         "ScanFilter": {
             "name": {
                 "AttributeValueList": [
