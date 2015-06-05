@@ -157,7 +157,7 @@ app.get('/stream', function (req, res) {
         console.log(data);
         var items = data.Items;
         for (var i in items) {
-            streamdata.push([items[i].value.N, items[i].timestamp.N]);
+            streamdata.push(items[i].value.N);
         }
         return res.send(streamdata);
     });
