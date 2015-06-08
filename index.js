@@ -112,33 +112,34 @@ app.get('/stream', function (req, res) {
     console.log(channel);
     console.log(end);
     console.log(start);
-    db.query({
+    db.scan({
         TableName: "tb_channel_data",
-        Limit: 1000,
-        KeyConditions: {
-            name: {
-                ComparisonOperator: 'EQ', /* required */
-                AttributeValueList: [
-                    {/* AttributeValue */
-                        S: channel
-                    }
-                    /* more items */
-                ]
-            },
-            timestamp: {
-                ComparisonOperator: 'BETWEEN', /* required */
-                AttributeValueList: [
-                    {/* AttributeValue */
-                        N: ''+start
-
-                    },
+        Limit : 1000,
+        "ScanFilter": {
+            "name": {
+                "AttributeValueList": [
                     {
-                        N: ''+end
+                        "S": channel
                     }
-                    /* more items */
-                ]
+                ],
+                "ComparisonOperator": "EQ"
+            },
+            "timestamp": {
+                "AttributeValueList": [
+                    {
+                        "N": ""+start
+                    }
+                ],
+                "ComparisonOperator": "GT"
+            },
+            "timestamp": {
+                "AttributeValueList": [
+                    {
+                        "N": ""+end
+                    }
+                ],
+                "ComparisonOperator": "LT"
             }
-            /* anotherKey: ... */
         }
     }, function (err, data) {
         if (err) {
