@@ -114,7 +114,7 @@ app.get('/stream', function (req, res) {
     console.log(start);
     db.scan({
         TableName: "tb_channel_data",
-        
+        Limit : 1000,
         "ScanFilter": {
             "name": {
                 "AttributeValueList": [
