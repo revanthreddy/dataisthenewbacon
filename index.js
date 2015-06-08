@@ -54,8 +54,8 @@ app.get('/sample', function (req, res) {
     var db = new AWS.DynamoDB();
     var streamdata = [];
     var start = req.query.start;
-    var end   = req.query.end;
-    
+    var end = req.query.end;
+
     db.scan({
         TableName: "tb_channel_data",
         Limit: 50,
@@ -71,7 +71,7 @@ app.get('/sample', function (req, res) {
             "timestamp": {
                 "AttributeValueList": [
                     {
-                        "N": ""+1433520591010
+                        "N": "" + 1433520591010
                     }
                 ],
                 "ComparisonOperator": "LT"
@@ -103,43 +103,42 @@ app.get('/stream', function (req, res) {
     var db = new AWS.DynamoDB();
     var streamdata = [];
     var start = req.query.start;
-    var end   = req.query.end;
+    var end = req.query.end;
     var channel = req.query.channel;
-    if(!start || !end)
+    if (!start || !end)
         return res.status(400).send("need to have 'start' and 'end parameters.");
-    if(!channel)
+    if (!channel)
         channel = "stream";
     console.log(channel);
     console.log(end);
     console.log(start);
-    db.scan({
+    db.query({
         TableName: "tb_channel_data",
-        Limit : 1000,
-        "ScanFilter": {
-            "name": {
-                "AttributeValueList": [
-                    {
-                        "S": channel
+        Limit: 1000,
+        KeyConditions: {
+            name: {
+                ComparisonOperator: 'EQ', /* required */
+                AttributeValueList: [
+                    {/* AttributeValue */
+                        S: channel
                     }
-                ],
-                "ComparisonOperator": "EQ"
+                    /* more items */
+                ]
             },
-            "timestamp": {
-                "AttributeValueList": [
+            timestamp: {
+                ComparisonOperator: 'BETWEEN', /* required */
+                AttributeValueList: [
+                    {/* AttributeValue */
+                        N: ''+start
+
+                    },
                     {
-                        "N": ""+start
+                        N: ''+end
                     }
-                ],
-                "ComparisonOperator": "GT"
-            },
-            "timestamp": {
-                "AttributeValueList": [
-                    {
-                        "N": ""+end
-                    }
-                ],
-                "ComparisonOperator": "LT"
+                    /* more items */
+                ]
             }
+            /* anotherKey: ... */
         }
     }, function (err, data) {
         if (err) {
